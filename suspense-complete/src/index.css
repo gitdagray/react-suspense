@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* || RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+select {
+    font: inherit;
+}
+
+/* || VARIABLES */
+
+:root {
+    --BGCOLOR: papayawhip;
+    --HEAD-FOOT-BGCOLOR: #333;
+    --HEAD-FOOT-COLOR: #FFF;
+    --MAIN-BGCOLOR: #d2b48c;
+    --MAIN-FONT-COLOR: #333;
+    --MAIN-BORDER: #333;
+    --POST-BGCOLOR: #fff6e8;
+    --BOX-SHADOW: rgb(0,0,0,0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --BGCOLOR: #000;
+        --HEAD-FOOT-BGCOLOR: #1a1a1a;
+        --MAIN-BGCOLOR: #21262d;
+        --MAIN-FONT-COLOR: #FFF;
+        --POST-BGCOLOR: #2b323b; 
+    }
+} 
+
+/* || UTILITY CLASSES */
+
+.hide {
+    display: none;
+}
+
+
+.message {
+    color: var(--MAIN-FONT-COLOR);
+    margin: 2rem;
+    font-size: 1.5rem;
+}
+
+.error {
+    margin: 2rem;
+    padding: 1rem;
+    background-color: whitesmoke;
+    font-size: 1.5rem;
+}
+
+.error > pre { 
+    color: firebrick;
+    font-size: 1rem;
+}
+
+.error > button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+/* || ELEMENTS */
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--BGCOLOR);
+    max-width: 800px;
+    min-height: 100vh;
+    margin: auto;
+}
+
+#root { /* React Root div */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--MAIN-BGCOLOR);
+}
+
+header, footer {
+    background-color: var(--HEAD-FOOT-BGCOLOR);
+    color: var(--HEAD-FOOT-COLOR);
+    width: 100%;
+    padding: 1rem;
+    position: sticky;
+    z-index: 1;
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+    text-align: center;
+}
+
+
+main {
+    background-color: var(--MAIN-BGCOLOR);
+    color: var(--MAIN-FONT-COLOR);
+    flex-grow: 1;
+    padding: 0 0 40px;
+    border: 1px solid var(--MAIN-BORDER);
+}
+
+/* || CLASSES */
+.selectMenu  {
+    width: 270px;
+    margin-top: 0.25rem;
+    padding: 0.25rem;
+    border-radius: 0.75rem;
+}
+
+.default-text {
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* || STYLES FOR POSTS */
+
+.post {
+    background-color: var(--POST-BGCOLOR);
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid var(--MAIN-BORDER);
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px 2px var(--BOX-SHADOW);
+}
+
+.post p {
+    margin-top: 0.25rem;
+}
+
+.post p:nth-child(5) {
+    font-style: italic;
+}
+
+/* || MEDIA QUERIES */
+
+@media only screen and (min-width: 400px) {
+    .selectMenu  {
+        font-size: 1.4rem;
+        max-width: 270px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    body {
+        box-shadow: 2px 2px 2px 2px var(--BOX-SHADOW);
+    }
+}
